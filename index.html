@@ -7,7 +7,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/><!-- Slick Slider css -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- /Favicons -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ActiveBox example">
+    <meta name="Keywords" content="ActiveBox, example">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <title>ActiveBox</title>
 </head>
 
@@ -37,21 +55,25 @@
     </symbol>
 </svg>
 <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
 
-                <div class="header__logo">
+                <div class="header__logo"  data-scroll="#intro">
                     <img src="img/activebox-logo.png" alt="">
                 </div>
 
-                <nav class="nav">
-                    <a href="#" class="nav__link">Features</a>
-                    <a href="#" class="nav__link">works</a>
-                    <a href="#" class="nav__link">Our team</a>
-                    <a href="#" class="nav__link">Download</a>
-                    <a href="#" class="nav__link">Testimonials</a>
+                <nav class="nav" id="nav">
+                    <a href="#" class="nav__link" data-scroll="#features">Features</a>
+                    <a href="#" class="nav__link" data-scroll="#works">works</a>
+                    <a href="#" class="nav__link" data-scroll="#team">Our team</a>
+                    <a href="#" class="nav__link" data-scroll="#download">Download</a>
+                    <a href="#" class="nav__link" data-scroll="#reviews">Testimonials</a>
                 </nav>
+
+                <button class="burger" type="button" id="navToggle">
+                    <span class="burger__item">Menu</span>
+                </button>
 
             </div>
 
@@ -61,7 +83,7 @@
 
 <!-- Intro -->
 
-    <div class="intro">
+    <div class="intro" id="intro">
         <div class="container">
             <div class="intro__inner">
                 <h1 class="intro__title">Your Favorite One Page Multi Purpose Temolate</h1>
@@ -74,7 +96,7 @@
 
     <!-- Features -->
 
-    <div class="container">
+    <div class="container" id="features">
         <div class="features">
 
             <div class="feature__item">
@@ -117,7 +139,7 @@
 
 <!-- Works -->
 
-    <div class="works">
+    <div class="works" id="works">
 
         <div class="works__item">
             <img class="works__photo" src="img/works/1.jpg" alt="">
@@ -211,7 +233,7 @@
     </div><!-- /.works -->
 
 <!-- Team -->
-    <div class="team">
+    <div class="team" id="team">
         <div class="container">
             <div class="team__inner">
 
@@ -342,22 +364,76 @@
 
 <!-- reviews -->
 
-<div class="reviews">
-    <div class="container">
-        
-        <div class="reviews__item">
-            <div class="reviews__photo">
-                <img class="reviews__img" src="img/reviews/1.jpg" alt="">
-            </div>
-            <div class="reviews__content">
-                <div class="reviews__text">
-                    “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”
+<div class="reviews" id="reviews">
+    <div class="reviews__inner">
+
+        <div class="reviews__slider" id="reviewsSlider">
+
+            <div class="slick__item">
+                <div class="reviews__item">
+                    <div class="reviews__photo">
+                        <img class="reviews__img" src="img/reviews/1.jpg" alt="">
+                    </div>
+                    <div class="reviews__content">
+                        <div class="reviews__text">
+                            “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”
+                        </div>
+                        <div class="reviews__author">
+                            Susan Sims, Interaction Designer at XYZ
+                        </div>
+                    </div>
                 </div>
-                <div class="reviews__author">
-                    Susan Sims, Interaction Designer at XYZ
+            </div>
+
+            <div class="slick__item">
+                <div class="reviews__item">
+                    <div class="reviews__photo">
+                        <img class="reviews__img" src="img/team/1.jpg" alt="">
+                    </div>
+                    <div class="reviews__content">
+                        <div class="reviews__text">
+                            “Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolore doloremque totam placeat voluptas quis asperiores, inventore natus fuga qui?”
+                        </div>
+                        <div class="reviews__author">
+                            Susan Sims, Interaction Designer at XYZ
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="slick__item">
+                <div class="reviews__item">
+                    <div class="reviews__photo">
+                        <img class="reviews__img" src="img/team/2.jpg" alt="">
+                    </div>
+                    <div class="reviews__content">
+                        <div class="reviews__text">
+                            “Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolore doloremque totam placeat voluptas quis asperiores, inventore natus fuga qui?”
+                        </div>
+                        <div class="reviews__author">
+                            Susan Sims, Interaction Designer at XYZ
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slick__item">
+                <div class="reviews__item">
+                    <div class="reviews__photo">
+                        <img class="reviews__img" src="img/team/3.jpg" alt="">
+                    </div>
+                    <div class="reviews__content">
+                        <div class="reviews__text">
+                            “Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolore doloremque totam placeat voluptas quis asperiores, inventore natus fuga qui?”
+                        </div>
+                        <div class="reviews__author">
+                            Susan Sims, Interaction Designer at XYZ
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /#reviewsSlider -->
 
     </div><!-- /.container -->
 </div><!-- /.reviews -->
@@ -365,7 +441,7 @@
 
 
 <!--Download -->
-<div class="download">
+<div class="download" id="download">
     <div class="container">
             <h3 class="download__title">
                 Are You Ready to Start? Download Now For Free!
@@ -423,6 +499,8 @@
 
     </div><!-- /.container -->
 
+
+    <!-- Copyright -->
     <div class="copyright">
         <div class="container">
             <div class="copyright__text">
@@ -436,7 +514,9 @@
     </div>
 </footer>
 
-<!-- Copyright -->
 
+<!-- JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> <!-- Slick slider lib -->
+<script src="app.js"></script>
 </body>
 </html>
